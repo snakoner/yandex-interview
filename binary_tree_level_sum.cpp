@@ -68,15 +68,11 @@ public:
             num_levels = level;
             level_sum[level] += node->value;
 
-
-            if (node->left) {
+            if (node->left)
                 q.push({node->left, level + 1});
-            }
 
-            if (node->right) {
+            if (node->right)
                 q.push({node->right, level + 1});
-            }
-
         }
 
         for (size_t i = 1; i < level_sum.size(); i++) {
