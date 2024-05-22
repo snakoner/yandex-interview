@@ -44,6 +44,9 @@ std::pair<int,int> maxDistance(const std::vector<int>& v) {
     std::pair<int,int> max_ind = {0,0};
     bool up = false, down = false;
 
+    if (v.size() <= 1)
+        return max_ind;
+    
     for (size_t i = 1; i < v.size(); i++) {
         if (v[i - 1] == v[i]) {
             up = down = false;
